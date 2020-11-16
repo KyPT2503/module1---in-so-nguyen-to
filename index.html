@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<input type="text" id="input" placeholder="can in bao bao nhieu SNT ?" onchange="sntPrint()">
+<script>
+    function sntCheck(value)
+    {
+        if(value<2) return false;
+        else
+        {
+            for(let i=2;i<=value/2;i++)
+            {
+                if((value%i) == 0) return false;
+            }
+            return true;
+        }
+    }
+    function sntPrint()
+    {
+        let sntAmountNeed=+document.getElementById('input').value;
+        let sntAmountNow=0;
+        let number=1;
+        while(sntAmountNow<sntAmountNeed)
+        {
+            if(sntCheck(number) == true)
+            {
+                sntAmountNow+=1;
+                document.write(sntAmountNow+' / '+ number+'<br>');
+                console.log('number');
+                number++;
+            }
+            else
+            {
+                number++;
+            }
+        }
+    }
+</script>
+</body>
+</html>
